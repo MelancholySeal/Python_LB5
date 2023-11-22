@@ -3,23 +3,15 @@
 
 import math
 
-def factorial(n):
-    return math.factorial(n)
+x = float(input("Введите аргумент функции: "))
 
-def integral_sin(x, e):
-    result = 0
-    n = 0
-    term = x
-    while abs(term) > e:
-        result += term
-        n += 1
-        term = (-1) ** n * (x ** (2 * n + 1)) / (factorial(2 * n + 1))
-    return result
+result = 0
+n = 0
+term = x
 
-if __name__ == '__main__':
-    x = float(input("Введите аргумент функции: "))
+while abs(term) > 1e-10:
+    result += term
+    n += 1
+    term = (-1) ** n * (x ** (2 * n + 1)) / math.factorial(2 * n + 1)
 
-    e = 1e-10
-    result = integral_sin(x, e)
-
-    print(f"Значение интегрального синуса при аргументе {x} с точностью e={e}: {result}")
+print(f"Значение интегрального синуса при аргументе {x} с точностью e=1e-10: {result}")
