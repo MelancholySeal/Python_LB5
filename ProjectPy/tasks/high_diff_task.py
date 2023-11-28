@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
 import math
 
@@ -14,4 +12,4 @@ while abs(term) > 1e-10:
     n += 1
     term = (-1) ** n * (x ** (2 * n + 1)) / math.factorial(2 * n + 1)
 
-print(f"Значение интегрального синуса при аргументе {x} с точностью e=1e-10: {result}")
+print(f"Значение интегрального синуса при аргументе {x}: {result}")
