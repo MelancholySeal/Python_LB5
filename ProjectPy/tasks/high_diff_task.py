@@ -6,13 +6,13 @@ import math
 if __name__ == '__main__':
     x = float(input("Введите аргумент функции: "))
 
-    result = 0
+    result = x
     n = 0
-    term = x
+    term = result
 
-    while abs(term) > 1e-10:
+    while math.fabs(term) > 1e-10:
+        term *= -x ** 2 * (2 * n + 1) / ((2 * n + 3) ** 2 * (2 * n + 2))
         result += term
         n += 1
-        term = -x**2*(2*n+1)/((2*n+3)**2*(2*n+2))
 
     print(f"Значение интегрального синуса при аргументе {x}: {result}")
